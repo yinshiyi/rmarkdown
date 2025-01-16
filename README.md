@@ -3,7 +3,13 @@ Inspiration from [README.md](https://github.com/csdaw/rmarkdown-tinytex)
 Build
 ```
 # user can set different R versions, default is 4.2
+# takes 500s
 docker build . -t rmarkdown --build-arg R=latest
+```
+
+```
+# takes 500s
+DOCKER_BUILDKIT=1 docker build -t shiyiyin/rmarkdown:test . --build-arg R=4.2
 ```
 
 Push
