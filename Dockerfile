@@ -15,6 +15,7 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     wget \
     graphviz \
+    libssl-dev \
     perl && \
     /rocker_scripts/install_pandoc.sh
 # install r packages
