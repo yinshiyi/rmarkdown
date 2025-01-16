@@ -10,11 +10,15 @@ LABEL maintainer="Shiyi Yin <yinshiyi2020@gmail.com>" \
       org.label-schema.vcs-url="https://github.com/yinshiyi/rmarkdown" \
       org.label-schema.license="MIT"
 
-# install linux dependencies, pandoc, and rmarkdown
+# install linux dependencies, pandoc
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     wget \
     graphviz \
     perl && \
-    /rocker_scripts/install_pandoc.sh && \
-    install2.r rmarkdown
+    /rocker_scripts/install_pandoc.sh
+# install r packages
+RUN install2.r --error \
+    rmarkdown \
+    dplyr \
+    ggplot2
