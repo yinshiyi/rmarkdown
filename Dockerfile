@@ -15,9 +15,21 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     wget \
     graphviz \
+    make \
+    libcairo2-dev \
+    libcurl4-openssl-dev \
+    libfontconfig1-dev \
+    libfreetype6-dev \
+    pandoc \
     libssl-dev \
-    perl && \
-    /rocker_scripts/install_pandoc.sh
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    libfribidi-dev \
+    libharfbuzz-dev \
+    libxml2-dev \
+    perl
+
 # install r packages
 RUN install2.r --error \
     rmarkdown \
