@@ -13,22 +13,29 @@ LABEL maintainer="Shiyi Yin <yinshiyi2020@gmail.com>" \
 # install linux dependencies, pandoc
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
+    # Basic tools
     wget \
-    graphviz \
     make \
+    perl \
+    pandoc \
+    # Development libraries
     libcairo2-dev \
-    libcurl4-openssl-dev \
     libfontconfig1-dev \
     libfreetype6-dev \
-    pandoc \
+    libcurl4-openssl-dev \
     libssl-dev \
+    # Image processing libraries
     libjpeg-dev \
     libpng-dev \
     libtiff-dev \
+    # Font and text rendering
     libfribidi-dev \
     libharfbuzz-dev \
     libxml2-dev \
-    perl
+    # Graphical tools
+    graphviz \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 # install r packages
 RUN install2.r --error \
