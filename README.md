@@ -1,6 +1,11 @@
 Inspiration from [README.md](https://github.com/csdaw/rmarkdown-tinytex)
 
 Build
+
+```
+# build amd64 platform 
+docker buildx build --platform linux/amd64 -t shiyiyin:rmarkdown:amd64 .
+```
 ```
 # user can set different R versions, default is 4.2
 # takes 500s
